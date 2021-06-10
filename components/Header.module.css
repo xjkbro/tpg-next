@@ -1,0 +1,13 @@
+#logo {
+    font-weight: 400;
+    font-size: 65px;
+    letter-spacing: 20px;
+}
+#logosmall {
+    font-weight: 300;
+    font-size: 20px;
+    letter-spacing: -1px;
+}
+.container {
+    margin: 50px 200px;
+}

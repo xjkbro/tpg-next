@@ -1,0 +1,14 @@
+.navBar {
+    margin: auto;
+    z-index: 2;
+}
+.ul {
+    list-style-type: none;
+    float: right;
+    overflow: hidden;
+}
+.li {
+    float: left;
+    z-index: 1;
+    padding: 0 30px;
+}
