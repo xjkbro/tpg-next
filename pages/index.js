@@ -34,7 +34,7 @@ export default function Home({ arr }) {
 }
 
 export async function getServerSideProps(context) {
-    const res = await fetch(`http://localhost:3000/api/home`);
+    const res = await fetch(`https://tpg-next.vercel.app/`);
     const data = await res.json();
     if (!data) {
         return {
