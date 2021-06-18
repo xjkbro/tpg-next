@@ -1,5 +1,5 @@
 import Link from "next/link";
-import Nav from "../components/Nav";
+import Showcase from "../components/Showcase";
 import headerStyle from "./Header.module.css";
 
 export default function Header() {
@@ -13,7 +13,7 @@ export default function Header() {
                     {"theory of practical gaming".toUpperCase()}
                 </Link>
             </div> */}
-            <Nav />
+            <Showcase />
         </div>
     );
 }

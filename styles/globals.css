@@ -8,9 +8,7 @@ body {
     color: white;
 }
 body {
-    background: url("../public/fredrick-tendong--GMUHeFuJUs-unsplash.jpg")
-        no-repeat;
-    background-size: cover;
+    background-color: #555;
 }
 
 a {
