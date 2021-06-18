@@ -10,7 +10,7 @@ export default function Sections({ picLeft, pictureURL, title, description }) {
                     <SectionLeft>
                         <Title>{title}</Title>
                         <AccentLeft>____</AccentLeft>
-                        <Description>{description}</Description>
+                        <DescriptionLeft>{description}</DescriptionLeft>
                     </SectionLeft>
                 </>
             ) : (
@@ -19,7 +19,7 @@ export default function Sections({ picLeft, pictureURL, title, description }) {
                     <SectionRight>
                         <Title>{title}</Title>
                         <AccentRight>____</AccentRight>
-                        <Description>{description}</Description>
+                        <DescriptionRight>{description}</DescriptionRight>
                     </SectionRight>
                 </>
             )}
@@ -41,6 +41,7 @@ const SectionLeft = styled.div`
     align-content: right;
     text-align: right;
     height: 100%;
+    width: 1800px;
 `;
 const PictureLeft = styled.img`
     height: 100%;
@@ -77,7 +78,16 @@ const Title = styled.h1`
     font-size: 60px;
 `;
 
-const Description = styled.p`
+const DescriptionLeft = styled.p`
+    position: absolute;
+    right: 0;
+    width: 650px;
+    letter-spacing: 1px;
+    line-height: 35px;
+    font-size: 24px;
+    font-weight: 300;
+`;
+const DescriptionRight = styled.p`
     width: 650px;
     letter-spacing: 1px;
     line-height: 35px;

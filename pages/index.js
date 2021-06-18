@@ -7,55 +7,44 @@ import Sections from "../components/Sections";
 import Footer from "../components/Footer";
 import homeStyle from "../styles/Home.module.css";
 
-export default function Home() {
+export default function Home({ arr }) {
     return (
         <Layout>
             <Header />
             <Sections
                 picLeft
-                pictureURL="./brotherhood.jpg"
-                title="Relationship"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean tempus sodales auctor. Donec ultrices vestibulum
-                    magna. Duis nibh sem, congue a egestas sed, semper vitae
-                    nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean tempus sodales auctor. Donec ultrices vestibulum
-                    magna. Duis nibh sem, congue a egestas sed, semper vitae
-                    nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean tempus sodales auctor. Donec ultrices vestibulum
-                    magna. Duis nibh sem, congue a egestas sed, semper vitae
-                    nunc. "
+                pictureURL={arr[0].src}
+                title={arr[0].title}
+                description={arr[0].desc}
             />
             <Sections
-                pictureURL="./brotherhood.jpg"
-                title="Relationship"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean tempus sodales auctor. Donec ultrices vestibulum
-                    magna. Duis nibh sem, congue a egestas sed, semper vitae
-                    nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean tempus sodales auctor. Donec ultrices vestibulum
-                    magna. Duis nibh sem, congue a egestas sed, semper vitae
-                    nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean tempus sodales auctor. Donec ultrices vestibulum
-                    magna. Duis nibh sem, congue a egestas sed, semper vitae
-                    nunc. "
+                pictureURL={arr[1].src}
+                title={arr[1].title}
+                description={arr[1].desc}
             />
             <Sections
                 picLeft
-                pictureURL="./brotherhood.jpg"
-                title="Relationship"
-                description="Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean tempus sodales auctor. Donec ultrices vestibulum
-                    magna. Duis nibh sem, congue a egestas sed, semper vitae
-                    nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean tempus sodales auctor. Donec ultrices vestibulum
-                    magna. Duis nibh sem, congue a egestas sed, semper vitae
-                    nunc. Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Aenean tempus sodales auctor. Donec ultrices vestibulum
-                    magna. Duis nibh sem, congue a egestas sed, semper vitae
-                    nunc. "
+                pictureURL={arr[2].src}
+                title={arr[2].title}
+                description={arr[2].desc}
             />
             <Footer />
         </Layout>
     );
+}
+
+export async function getServerSideProps(context) {
+    const res = await fetch(`http://localhost:3000/api/home`);
+    const data = await res.json();
+    if (!data) {
+        return {
+            notFound: true,
+        };
+    }
+
+    return {
+        props: {
+            arr: data,
+        }, // will be passed to the page component as props
+    };
 }
