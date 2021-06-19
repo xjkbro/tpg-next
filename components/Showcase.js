@@ -1,11 +1,21 @@
 import Link from "next/link";
 import styled from "styled-components";
+import React, { useEffect, useRef } from "react";
 
 export default function Showcase() {
+    const videoRef = useRef();
+    useEffect(() => {
+        setTimeout(() => {
+            videoRef.current.play();
+        }, 0);
+    }, []);
     return (
         <Container>
             {/* Handles all Showcase background elements */}
-            <Background />
+            {/* <Background /> */}
+            <VideoBG ref={videoRef} width="250" loop muted>
+                <source src="gamers.mp4" type="video/mp4"></source>
+            </VideoBG>
             <Outline src="/SVG/Layer 3.svg" alt="" srcset="" />
             {/* Navigation with Logo and Links */}
             <NavBar>
@@ -22,14 +32,16 @@ export default function Showcase() {
                     <Link href="/partnership">Partnership</Link>
                 </NavLinks>
             </NavBar>
-            <Logo>
-                <Link href="/">{"TPG".toUpperCase()}</Link>
-            </Logo>
-            <LogoSm>
-                <Link href="/">
-                    {"theory of practical gaming".toUpperCase()}
-                </Link>
-            </LogoSm>
+            <LogoFull>
+                <Logo>
+                    <Link href="/">{"TPG".toUpperCase()}</Link>
+                </Logo>
+                <LogoSm>
+                    <Link href="/">
+                        {"theory of practical gaming".toUpperCase()}
+                    </Link>
+                </LogoSm>
+            </LogoFull>
             {/* Showcase's hero section */}
             <Hero>
                 <HeroTitle>Brotherhood of Gamers</HeroTitle>
@@ -66,18 +78,30 @@ const NavLinks = styled.li`
     :hover {
         transform: scale(1.05);
         opacity: 1;
+        color: #333;
     }
 `;
-const Logo = styled.div`
+const Logo = styled.span`
+    display: inline-block;
     font-weight: Bold;
     font-size: 65px;
     letter-spacing: 20px;
 `;
-const LogoSm = styled.div`
+const LogoSm = styled.span`
+    display: inline-block;
     font-weight: 300;
     font-size: 20px;
     letter-spacing: -1px;
+    max-width: 400px;
 `;
+const LogoFull = styled.div`
+    width: 320px;
+    transition: all 100ms ease-in;
+    :hover {
+        color: #333;
+    }
+`;
+
 const Outline = styled.img`
     position: absolute;
     top: 0 !important;
@@ -124,4 +148,15 @@ const HeroLink = styled.span`
         transform: scale(1.05);
         opacity: 1;
     }
+`;
+
+const VideoBG = styled.video`
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 111vh;
+    object-fit: cover;
+    opacity: 1;
+    z-index: -1;
 `;
