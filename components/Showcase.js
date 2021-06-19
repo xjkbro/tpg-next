@@ -145,8 +145,9 @@ const HeroLink = styled.span`
     cursor: pointer;
     transition: all 100ms ease-in;
     :hover {
-        transform: scale(1.05);
-        opacity: 1;
+        background-color: #111;
+        text-transform: uppercase;
+        letter-spacing: 1px;
     }
 `;
 
