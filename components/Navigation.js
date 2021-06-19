@@ -1,7 +1,7 @@
 import Link from "next/link";
 import styled from "styled-components";
 
-export default function Showcase({}) {
+export default function Navigation({}) {
     return (
         <Container>
             {/* Handles all Showcase background elements */}
@@ -10,7 +10,9 @@ export default function Showcase({}) {
             {/* Navigation with Logo and Links */}
             <NavBar>
                 <NavLinks>
-                    <Link href="/about">About</Link>
+                    <Link href="/about">
+                        <b>About</b>
+                    </Link>
                 </NavLinks>
                 <NavLinks>
                     <Link href="/team">Team</Link>
@@ -94,8 +96,7 @@ const Background = styled.div`
     top: 0 !important;
     left: 0px !important;
     z-index: -1;
-    background: url("/fredrick-tendong--GMUHeFuJUs-unsplash.jpg") center
-        no-repeat;
+    background: url("/brotherhood.jpg") center no-repeat;
     background-size: cover;
 `;
 

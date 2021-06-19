@@ -1,19 +1,12 @@
 import Link from "next/link";
 import Showcase from "../components/Showcase";
+import Navigation from "../components/Navigation";
 import headerStyle from "./Header.module.css";
 
-export default function Header() {
+export default function Header({ isHome }) {
     return (
         <div className={headerStyle.container}>
-            {/* <div id={headerStyle.logo}>
-                <Link href="/">{"TPG".toUpperCase()}</Link>
-            </div>
-            <div id={headerStyle.logosmall}>
-                <Link href="/">
-                    {"theory of practical gaming".toUpperCase()}
-                </Link>
-            </div> */}
-            <Showcase />
+            {isHome ? <Showcase /> : <Navigation />}
         </div>
     );
 }

@@ -10,7 +10,7 @@ import homeStyle from "../styles/Home.module.css";
 export default function Home({ arr }) {
     return (
         <Layout>
-            <Header />
+            <Header isHome />
             <Sections
                 picLeft
                 pictureURL={arr[0].src}
@@ -41,7 +41,6 @@ export async function getServerSideProps(context) {
             notFound: true,
         };
     }
-
     return {
         props: {
             arr: data,
