@@ -150,7 +150,6 @@ const HeroLink = styled.span`
     }
 `;
 
-<<<<<<< HEAD
 const VideoBG = styled.video`
     position: absolute;
     top: 0;
@@ -161,20 +160,3 @@ const VideoBG = styled.video`
     opacity: 1;
     z-index: -1;
 `;
-=======
-export async function getServerSideProps(context) {
-    const res = await fetch(`https://tpg-next.vercel.app/api/about`);
-    const data = await res.json();
-    if (!data) {
-        return {
-            notFound: true,
-        };
-    }
-
-    return {
-        props: {
-            bgImg: data.bgImg,
-        }, // will be passed to the page component as props
-    };
-}
->>>>>>> deec149f75d87dd9c53943d4881e810448a8d41c
