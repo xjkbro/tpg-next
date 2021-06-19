@@ -1,26 +1,18 @@
 import Link from "next/link";
 import styled from "styled-components";
-import React, { useEffect, useRef } from "react";
 
-export default function Showcase() {
-    const videoRef = useRef();
-    useEffect(() => {
-        setTimeout(() => {
-            videoRef.current.play();
-        }, 0);
-    }, []);
+export default function Navigation({}) {
     return (
         <Container>
             {/* Handles all Showcase background elements */}
-            {/* <Background /> */}
-            <VideoBG ref={videoRef} width="250" loop muted>
-                <source src="gamers.mp4" type="video/mp4"></source>
-            </VideoBG>
+            <Background />
             <Outline src="/SVG/Layer 3.svg" alt="" srcset="" />
             {/* Navigation with Logo and Links */}
             <NavBar>
                 <NavLinks>
-                    <Link href="/about">About</Link>
+                    <Link href="/about">
+                        <b>About</b>
+                    </Link>
                 </NavLinks>
                 <NavLinks>
                     <Link href="/team">Team</Link>
@@ -32,16 +24,14 @@ export default function Showcase() {
                     <Link href="/partnership">Partnership</Link>
                 </NavLinks>
             </NavBar>
-            <LogoFull>
-                <Logo>
-                    <Link href="/">{"TPG".toUpperCase()}</Link>
-                </Logo>
-                <LogoSm>
-                    <Link href="/">
-                        {"theory of practical gaming".toUpperCase()}
-                    </Link>
-                </LogoSm>
-            </LogoFull>
+            <Logo>
+                <Link href="/">{"TPG".toUpperCase()}</Link>
+            </Logo>
+            <LogoSm>
+                <Link href="/">
+                    {"theory of practical gaming".toUpperCase()}
+                </Link>
+            </LogoSm>
             {/* Showcase's hero section */}
             <Hero>
                 <HeroTitle>Brotherhood of Gamers</HeroTitle>
@@ -78,30 +68,18 @@ const NavLinks = styled.li`
     :hover {
         transform: scale(1.05);
         opacity: 1;
-        color: #333;
     }
 `;
-const Logo = styled.span`
-    display: inline-block;
+const Logo = styled.div`
     font-weight: Bold;
     font-size: 65px;
     letter-spacing: 20px;
 `;
-const LogoSm = styled.span`
-    display: inline-block;
+const LogoSm = styled.div`
     font-weight: 300;
     font-size: 20px;
     letter-spacing: -1px;
-    max-width: 400px;
 `;
-const LogoFull = styled.div`
-    width: 320px;
-    transition: all 100ms ease-in;
-    :hover {
-        color: #333;
-    }
-`;
-
 const Outline = styled.img`
     position: absolute;
     top: 0 !important;
@@ -118,8 +96,7 @@ const Background = styled.div`
     top: 0 !important;
     left: 0px !important;
     z-index: -1;
-    background: url("/fredrick-tendong--GMUHeFuJUs-unsplash.jpg") center
-        no-repeat;
+    background: url("/brotherhood.jpg") center no-repeat;
     background-size: cover;
 `;
 
@@ -150,18 +127,6 @@ const HeroLink = styled.span`
     }
 `;
 
-<<<<<<< HEAD
-const VideoBG = styled.video`
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 111vh;
-    object-fit: cover;
-    opacity: 1;
-    z-index: -1;
-`;
-=======
 export async function getServerSideProps(context) {
     const res = await fetch(`https://tpg-next.vercel.app/api/about`);
     const data = await res.json();
@@ -177,4 +142,3 @@ export async function getServerSideProps(context) {
         }, // will be passed to the page component as props
     };
 }
->>>>>>> deec149f75d87dd9c53943d4881e810448a8d41c
