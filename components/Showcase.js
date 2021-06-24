@@ -38,7 +38,8 @@ export default function Showcase() {
                 </Logo>
                 <LogoSm>
                     <Link href="/">
-                        {"theory of practical gaming".toUpperCase()}
+                        {/* {"theory of practical gaming".toUpperCase()} */}
+                        {"tiny penis gang".toUpperCase()}
                     </Link>
                 </LogoSm>
             </LogoFull>

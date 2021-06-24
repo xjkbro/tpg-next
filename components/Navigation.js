@@ -29,7 +29,8 @@ export default function Navigation({}) {
             </Logo>
             <LogoSm>
                 <Link href="/">
-                    {"theory of practical gaming".toUpperCase()}
+                    {/* {"theory of practical gaming".toUpperCase()} */}
+                    {"tiny penis gang".toUpperCase()}
                 </Link>
             </LogoSm>
             {/* Showcase's hero section */}
