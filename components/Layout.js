@@ -5,7 +5,7 @@ export default function Layout({ children }) {
         <div>
             {children}
             <Head>
-                <title>Theory of Practical Gaming</title>
+                <title>Tiny Penis Gang</title>
             </Head>
         </div>
     );
