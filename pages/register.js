@@ -28,9 +28,8 @@ function Register() {
     })
 
     const registerResponse = await register.json()
-    // console.log(registerResponse)
+    console.log(registerResponse)
 
-    // Router.push('/payed-articles')
   }
 
   return (
